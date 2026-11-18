@@ -1,0 +1,21 @@
+<%= link_to "← All flats", flats_path, class: "btn btn-link px-0 mb-3" %>
+
+<div class="card shadow-sm border-0 mb-4">
+  <div class="card-body">
+    <span class="badge text-bg-secondary mb-2"><%= @flat.price_per_night %> Euro</span>
+    <h1 class="h2"><%= @flat.name %></h1>
+    <p class="text-muted mb-1">📍 <%= @flat.address %></p>
+     <p class="text-muted mb-1"> <%= @flat.description %></p>
+     <p> Add image</p>
+     <p> Add map</p>
+
+
+  <%= link_to edit_flat_path(@flat), class: "btn btn-outline-secondary btn-sm" do %>
+    <i class="fa-solid fa-pen"></i>
+  <% end %>
+  <%= link_to flat_path(@flat), class: "btn btn-outline-danger btn-sm",
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+  </div>
+</div>
